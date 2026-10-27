@@ -1,0 +1,416 @@
+<!doctype html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>MEB COP31 OGM Reel'leri — Onay</title>
+<style>
+:root { --mavi:#1048A0; --yesil:#38B878; --lale:#E0452B; --zemin:#F4F6F5; --kart:#fff; --metin:#1B2733; --ikincil:#5F6E7A; --cizgi:#DDE3E0; --onayZemin:#EAF7F0; --duzZemin:#FDECE9; --wa:#1FA855; }
+* { box-sizing:border-box; }
+body { margin:0; background:var(--zemin); color:var(--metin); font-family:-apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; line-height:1.5; }
+header { background:var(--mavi); color:#fff; padding:28px 16px 24px; }
+header .ic, main { max-width:1100px; margin:0 auto; }
+h1 { margin:0 0 6px; font-size:26px; line-height:1.2; }
+header p { margin:0; opacity:.9; }
+main { padding:16px; }
+.genel { background:var(--kart); border-radius:14px; padding:18px 20px; margin:8px 0 18px; border:1px solid var(--cizgi); }
+.genel table { width:100%; border-collapse:collapse; font-size:15px; }
+.genel td { padding:7px 0; border-bottom:1px solid var(--cizgi); vertical-align:top; }
+.genel td:first-child { width:110px; color:var(--ikincil); font-weight:600; }
+.ozet { background:var(--kart); border:1px solid var(--cizgi); border-radius:14px; padding:14px 20px; margin:0 0 18px; font-size:15px; display:flex; gap:16px; flex-wrap:wrap; align-items:center; }
+.ozet .rozet { display:inline-block; padding:4px 12px; border-radius:999px; font-weight:700; font-size:14px; }
+.rozet.o { background:var(--onayZemin); color:#1E7A4F; } .rozet.d { background:var(--duzZemin); color:#B5301B; } .rozet.b { background:var(--zemin); color:var(--ikincil); }
+.icerik { background:var(--kart); border-radius:14px; padding:18px 20px 20px; margin:0 0 18px; border:2px solid var(--cizgi); }
+.icerik.onay { border-color:var(--yesil); }
+.icerik.duzeltme { border-color:var(--lale); }
+.bas { display:flex; gap:14px; align-items:center; margin-bottom:12px; }
+.no { flex:0 0 auto; width:42px; height:42px; border-radius:21px; background:var(--mavi); color:#fff; display:flex; align-items:center; justify-content:center; font-weight:800; font-size:20px; }
+h2 { margin:0; font-size:20px; line-height:1.25; }
+.kunye { margin:2px 0 0; color:var(--ikincil); font-size:14px; }
+.icerik img { width:100%; height:auto; border-radius:10px; display:block; background:#2B2F33; }
+.aciklama { margin:8px 0 0; color:var(--ikincil); font-size:13px; }
+.resim { overflow-x:auto; border-radius:10px; }
+.kaydir { display:none; }
+ol { margin:12px 0 10px; padding-left:22px; font-size:15px; }
+li { margin:3px 0; }
+.ses { margin:0 0 14px; background:var(--zemin); border-radius:10px; padding:10px 14px; font-size:15px; }
+.ses b { color:var(--yesil); font-size:12px; letter-spacing:.06em; text-transform:uppercase; display:block; margin-bottom:3px; }
+.karar { display:flex; gap:10px; flex-wrap:wrap; }
+.sec { flex:1 1 200px; display:flex; align-items:center; gap:10px; padding:12px 14px; border-radius:10px; border:2px solid var(--cizgi); cursor:pointer; font-weight:600; font-size:16px; }
+.sec input { width:20px; height:20px; accent-color:var(--mavi); }
+.sec.onay:has(input:checked) { border-color:var(--yesil); background:var(--onayZemin); }
+.sec.duz:has(input:checked) { border-color:var(--lale); background:var(--duzZemin); }
+textarea { width:100%; margin-top:10px; min-height:64px; border-radius:10px; border:1px solid var(--cizgi); padding:10px 12px; font:inherit; font-size:15px; resize:vertical; }
+.yanitlar { margin-top:12px; display:flex; flex-direction:column; gap:8px; }
+.yanit { display:grid; grid-template-columns:auto 1fr; gap:4px 12px; padding:10px 14px; border-radius:10px; background:var(--zemin); border-left:4px solid var(--cizgi); font-size:14px; }
+.yanit.onay { border-left-color:var(--yesil); } .yanit.duzeltme { border-left-color:var(--lale); }
+.yanit .kim { font-weight:700; } .yanit .ne { grid-column:1 / -1; white-space:pre-wrap; }
+.yanit .zaman { color:var(--ikincil); font-size:13px; text-align:right; }
+.yanitlar h4 { margin:4px 0 0; font-size:13px; letter-spacing:.06em; text-transform:uppercase; color:var(--ikincil); }
+.gonder { position:sticky; bottom:0; background:var(--kart); border-top:1px solid var(--cizgi); padding:12px 16px; box-shadow:0 -4px 14px rgba(0,0,0,.06); }
+.gonder .ic { max-width:1100px; margin:0 auto; display:flex; gap:10px; align-items:center; flex-wrap:wrap; }
+.gonder input { flex:1 1 200px; min-width:0; padding:11px 12px; border-radius:10px; border:1px solid var(--cizgi); font:inherit; }
+.durum { flex:1 1 100%; font-size:14px; color:var(--ikincil); }
+button, .wa { border:0; border-radius:10px; padding:12px 16px; font:inherit; font-weight:700; cursor:pointer; text-decoration:none; display:inline-block; }
+.kaydet { background:var(--mavi); color:#fff; }
+.kaydet[disabled] { opacity:.6; cursor:wait; }
+.wa { background:var(--wa); color:#fff; }
+.kopya { background:#E8ECEA; color:var(--metin); }
+@media (max-width: 640px) { .resim img { width:auto; height:420px; max-width:none; } .kaydir { display:inline; } .gonder { position:static; box-shadow:none; border-top:0; background:transparent; padding:0 16px 24px; } .gonder button, .gonder .wa { flex:1 1 45%; text-align:center; } }
+</style>
+</head>
+<body>
+<header><div class="ic">
+  <h1>MEB COP31 Ortaöğretim GM Reel'leri — Görsel ve Metin Onayı</h1>
+  <p>12 video · yeni kurgu (21.10 tarihli ekran yazıları belgesine göre) · 27.10.2026</p>
+</div></header>
+<main>
+  <div class="genel"><table>
+    <tr><td>Format</td><td>Dikey Reel (9:16), final çıktı 4K, 30 fps; yalnız Türkçe. <b>İngilizce sürüm isteniyorsa lütfen bilgi veriniz; ekran yazılarının onaylı İngilizce metinlerini iletmenizi rica ederiz, videoları biz hazırlarız.</b></td></tr>
+    <tr><td>Tarz</td><td>Önceki OGM serisindeki tarz aileleri ve İdeathon'un kâğıt kolaj dili: kinetik (1, 2) · harita (3, 12) · takvim/kurumsal (5, 6, 7) · kâğıt kolaj (4, 8, 9) · ritim (10, 11)</td></tr>
+    <tr><td>Akış</td><td>Her videoda aynı: açılış (sayı/vurgu) → çağrılar → afiş ya da fotoğraf + tarih-yer bandı → ana slogan + ekran mesajı → kapanış (“… SENDE / … SENDE”) → MEB ve COP31 logoları</td></tr>
+    <tr><td>Görsel</td><td>Afiş ve fotoğraflar ilettiğiniz klasörden</td></tr>
+    <tr><td>Metin</td><td>Ekran yazıları belgedeki gibi; seslendirme bu yazıların okunuşudur (metin her videonun altında)</td></tr>
+    <tr><td>Süre</td><td>Yaklaşık 22–28 sn; kesin süre seslendirme kaydedilince belli olur</td></tr>
+    <tr><td>Nasıl?</td><td>Adınızı yazın, her video için “Onaylıyorum” ya da “Düzeltme istiyorum” seçip gerekirse not yazın; en altta <b>Kaydet</b>. Yanıtlarınız bu sayfada herkese görünür. İsterseniz ayrıca “WhatsApp ile gönder” ya da “Kopyala”.</td></tr>
+  </table></div>
+  <div class="ozet" id="ozet">Yanıtlar yükleniyor…</div>
+<section class="icerik" id="v1" data-no="1" data-ad="SOSYAL ETKINLIKLER POLITIKA BELGESI – DOĞA, ÇEVRE, TOPLUM">
+  <div class="bas"><span class="no">1</span><div><h2>SOSYAL ETKINLIKLER POLITIKA BELGESI – DOĞA, ÇEVRE, TOPLUM</h2><p class="kunye">Kinetik tipografi · yaklaşık 24 sn · yalnız Türkçe</p></div></div>
+  <div class="resim"><a href="paftalar/pafta-1.jpg" target="_blank" rel="noopener"><img src="paftalar/pafta-1.jpg" alt="1 · SOSYAL ETKINLIKLER POLITIKA BELGESI – DOĞA, ÇEVRE, TOPLUM — altı an" loading="lazy"></a></div>
+  <p class="aciklama">Soldan sağa: açılış, çağrılar, görsel ve tarih, slogan ve mesaj, kapanış, logolar. Büyütmek için görsele tıklayın.<span class="kaydir"> Görseli yana kaydırabilirsiniz.</span></p>
+  <ol>
+    <li>Açılış: DOĞA • ÇEVRE • TOPLUM</li>
+    <li>Çağrılar: DOĞAYI TANI! • ÇEVRENİ KORU! • TOPLUM İÇİN ÜRET!</li>
+    <li>Görsel: COP31 OGM etkinlikleri afişi (“Bugünün Gençleriyle Daha Yaşanabilir Yarınlara”); tarih bandı: 9–20 KASIM 2026 • ANTALYA, TÜRKİYE</li>
+    <li>Ana slogan: BUGÜNÜN GENÇLERİYLE DAHA YAŞANABİLİR YARINLARA; ekran mesajı: Doğayla öğren, çevrene değer kat, toplumla birlikte üret!</li>
+    <li>Kapanış: İKLİM İÇİN BİR ARADA + “DOĞA • ÇEVRE • TOPLUM”</li>
+    <li>MEB ve COP31 logoları</li>
+  </ol>
+  <div class="ses"><b>Seslendirme metni</b>Doğa, çevre, toplum! Doğayı tanı! Çevreni koru! Toplum için üret! Dokuz - yirmi Kasım iki bin yirmi altı, Antalya, Türkiye. Bugünün gençleriyle daha yaşanabilir yarınlara! Doğayla öğren, çevrene değer kat, toplumla birlikte üret! İklim için bir arada!</div>
+  <div class="karar">
+    <label class="sec onay"><input type="radio" id="k1o" name="k1" value="onay"> Onaylıyorum</label>
+    <label class="sec duz"><input type="radio" id="k1d" name="k1" value="duzeltme"> Düzeltme istiyorum</label>
+  </div>
+  <textarea id="n1" name="n1" placeholder="Not (isteğe bağlı)"></textarea>
+  <div class="yanitlar" id="y1"></div>
+</section>
+<section class="icerik" id="v2" data-no="2" data-ad="TABIAT VE YAŞANABILIR ÇEVRE KULÜBÜ">
+  <div class="bas"><span class="no">2</span><div><h2>TABIAT VE YAŞANABILIR ÇEVRE KULÜBÜ</h2><p class="kunye">Kinetik tipografi · yaklaşık 24 sn · yalnız Türkçe</p></div></div>
+  <div class="resim"><a href="paftalar/pafta-2.jpg" target="_blank" rel="noopener"><img src="paftalar/pafta-2.jpg" alt="2 · TABIAT VE YAŞANABILIR ÇEVRE KULÜBÜ — altı an" loading="lazy"></a></div>
+  <p class="aciklama">Soldan sağa: açılış, çağrılar, görsel ve tarih, slogan ve mesaj, kapanış, logolar. Büyütmek için görsele tıklayın.<span class="kaydir"> Görseli yana kaydırabilirsiniz.</span></p>
+  <ol>
+    <li>Açılış: YENİ KULÜP • TÜM OKULLARIMIZDA</li>
+    <li>Çağrılar: KATIL! • HAREKETE GEÇ!</li>
+    <li>Görsel: Kulüp tanıtım görseli veya okul kulüp etkinliklerinden fotoğraflar — <b>klasörde bu etkinliğin afişi olmadığından genel COP31 OGM afişi kullanıldı</b>; tarih bandı: 9–20 KASIM 2026 • ANTALYA, TÜRKİYE</li>
+    <li>Ana slogan: OKULDAN DOĞAYA; ekran mesajı: Okulunda başla, doğa için harekete geç!</li>
+    <li>Kapanış: ADIM SENDE / DOĞA SENDE + “DOĞA • ÇEVRE • TOPLUM”</li>
+    <li>MEB ve COP31 logoları</li>
+  </ol>
+  <div class="ses"><b>Seslendirme metni</b>Yeni kulüp, tüm okullarımızda! Katıl! Harekete geç! Dokuz - yirmi Kasım iki bin yirmi altı, Antalya, Türkiye. Okuldan doğaya! Okulunda başla, doğa için harekete geç! Adım sende, doğa sende!</div>
+  <div class="karar">
+    <label class="sec onay"><input type="radio" id="k2o" name="k2" value="onay"> Onaylıyorum</label>
+    <label class="sec duz"><input type="radio" id="k2d" name="k2" value="duzeltme"> Düzeltme istiyorum</label>
+  </div>
+  <textarea id="n2" name="n2" placeholder="Not (isteğe bağlı)"></textarea>
+  <div class="yanitlar" id="y2"></div>
+</section>
+<section class="icerik" id="v3" data-no="3" data-ad="81 İL 81 GENÇ İKLIM DELEGE SEÇIMI">
+  <div class="bas"><span class="no">3</span><div><h2>81 İL 81 GENÇ İKLIM DELEGE SEÇIMI</h2><p class="kunye">Harita / kâğıt kolaj · yaklaşık 24 sn · yalnız Türkçe</p></div></div>
+  <div class="resim"><a href="paftalar/pafta-3.jpg" target="_blank" rel="noopener"><img src="paftalar/pafta-3.jpg" alt="3 · 81 İL 81 GENÇ İKLIM DELEGE SEÇIMI — altı an" loading="lazy"></a></div>
+  <p class="aciklama">Soldan sağa: açılış, çağrılar, görsel ve tarih, slogan ve mesaj, kapanış, logolar. Büyütmek için görsele tıklayın.<span class="kaydir"> Görseli yana kaydırabilirsiniz.</span></p>
+  <ol>
+    <li>Açılış: 81 İL • 81 GENÇ DELEGE</li>
+    <li>Çağrılar: İLİNİ ANLAT! • YEREL BAK, KÜRESEL DÜŞÜN!</li>
+    <li>Görsel: 81 İl 81 Genç İklim Delegesi afişi veya delegelerin fotoğrafları; tarih bandı: 19 KASIM 2026 • 81 İLDEN ANTALYA'YA</li>
+    <li>Ana slogan: 81 İLDEN COP31'E TEK SES; ekran mesajı: 81 il, 81 genç, iklim için ortak ses!</li>
+    <li>Kapanış: TEMSİL SENDE / SORUMLULUK SENDE + “DOĞA • ÇEVRE • TOPLUM”</li>
+    <li>MEB ve COP31 logoları</li>
+  </ol>
+  <div class="ses"><b>Seslendirme metni</b>Seksen bir il, seksen bir genç delege! İlini anlat! Yerel bak, küresel düşün! On dokuz Kasım iki bin yirmi altı, seksen bir ilden Antalya'ya. Seksen bir ilden Kop otuz bire tek ses! Seksen bir il, seksen bir genç, iklim için ortak ses! Temsil sende, sorumluluk sende!</div>
+  <div class="karar">
+    <label class="sec onay"><input type="radio" id="k3o" name="k3" value="onay"> Onaylıyorum</label>
+    <label class="sec duz"><input type="radio" id="k3d" name="k3" value="duzeltme"> Düzeltme istiyorum</label>
+  </div>
+  <textarea id="n3" name="n3" placeholder="Not (isteğe bağlı)"></textarea>
+  <div class="yanitlar" id="y3"></div>
+</section>
+<section class="icerik" id="v4" data-no="4" data-ad="KARDEŞ OKUL VE KÜDEP DIJITAL İÇERIKLER">
+  <div class="bas"><span class="no">4</span><div><h2>KARDEŞ OKUL VE KÜDEP DIJITAL İÇERIKLER</h2><p class="kunye">Kâğıt kolaj · yaklaşık 24 sn · yalnız Türkçe</p></div></div>
+  <div class="resim"><a href="paftalar/pafta-4.jpg" target="_blank" rel="noopener"><img src="paftalar/pafta-4.jpg" alt="4 · KARDEŞ OKUL VE KÜDEP DIJITAL İÇERIKLER — altı an" loading="lazy"></a></div>
+  <p class="aciklama">Soldan sağa: açılış, çağrılar, görsel ve tarih, slogan ve mesaj, kapanış, logolar. Büyütmek için görsele tıklayın.<span class="kaydir"> Görseli yana kaydırabilirsiniz.</span></p>
+  <ol>
+    <li>Açılış: OKUL OKULA • EL ELE</li>
+    <li>Çağrılar: PAYLAŞ! • ÖRNEK OL!</li>
+    <li>Görsel: Kardeş okul etkinlik fotoğrafları ve KÜDEP dijital içerik ekran görüntüleri; tarih bandı: 9–20 KASIM 2026 • ANTALYA, TÜRKİYE</li>
+    <li>Ana slogan: BİRLİKTE ÖĞREN, BİRLİKTE KORU; ekran mesajı: Okullar buluşsun, doğa için dayanışma büyüsün! / Dijitalde öğren, yaşamda uygula, çevrene örnek ol!</li>
+    <li>Kapanış: DAYANIŞMA SENDE / ÖRNEK SENDE + “DOĞA • ÇEVRE • TOPLUM”</li>
+    <li>MEB ve COP31 logoları</li>
+  </ol>
+  <div class="ses"><b>Seslendirme metni</b>Okul okula, el ele! Paylaş! Örnek ol! Dokuz - yirmi Kasım iki bin yirmi altı, Antalya, Türkiye. Birlikte öğren, birlikte koru! Okullar buluşsun, doğa için dayanışma büyüsün! Dijitalde öğren, yaşamda uygula, çevrene örnek ol! Dayanışma sende, örnek sende!</div>
+  <div class="karar">
+    <label class="sec onay"><input type="radio" id="k4o" name="k4" value="onay"> Onaylıyorum</label>
+    <label class="sec duz"><input type="radio" id="k4d" name="k4" value="duzeltme"> Düzeltme istiyorum</label>
+  </div>
+  <textarea id="n4" name="n4" placeholder="Not (isteğe bağlı)"></textarea>
+  <div class="yanitlar" id="y4"></div>
+</section>
+<section class="icerik" id="v5" data-no="5" data-ad="TABIAT VE YAŞANABILIR ÇEVRE BILGI YARIŞMASI">
+  <div class="bas"><span class="no">5</span><div><h2>TABIAT VE YAŞANABILIR ÇEVRE BILGI YARIŞMASI</h2><p class="kunye">Takvim / kurumsal · yaklaşık 24 sn · yalnız Türkçe</p></div></div>
+  <div class="resim"><a href="paftalar/pafta-5.jpg" target="_blank" rel="noopener"><img src="paftalar/pafta-5.jpg" alt="5 · TABIAT VE YAŞANABILIR ÇEVRE BILGI YARIŞMASI — altı an" loading="lazy"></a></div>
+  <p class="aciklama">Soldan sağa: açılış, çağrılar, görsel ve tarih, slogan ve mesaj, kapanış, logolar. Büyütmek için görsele tıklayın.<span class="kaydir"> Görseli yana kaydırabilirsiniz.</span></p>
+  <ol>
+    <li>Açılış: BÖLGEDEN FİNALE • 4 KİŞİLİK TAKIMLAR</li>
+    <li>Çağrılar: TABİATI TANI! • YARINI KORU!</li>
+    <li>Görsel: Yarışma afişi; varsa bölge aşamalarından fotoğraflar; tarih bandı: 18 KASIM 2026 • FİNAL • ANTALYA</li>
+    <li>Ana slogan: BİLGİYLE KORUNAN TABİAT; ekran mesajı: Bilginle yarış, doğanın geleceğine sahip çık!</li>
+    <li>Kapanış: BİLGİ SENDE / YARIN SENDE + “DOĞA • ÇEVRE • TOPLUM”</li>
+    <li>MEB ve COP31 logoları</li>
+  </ol>
+  <div class="ses"><b>Seslendirme metni</b>Bölgeden finale, dört kişilik takımlar! Tabiatı tanı! Yarını koru! On sekiz Kasım iki bin yirmi altı, final, Antalya. Bilgiyle korunan tabiat! Bilginle yarış, doğanın geleceğine sahip çık! Bilgi sende, yarın sende!</div>
+  <div class="karar">
+    <label class="sec onay"><input type="radio" id="k5o" name="k5" value="onay"> Onaylıyorum</label>
+    <label class="sec duz"><input type="radio" id="k5d" name="k5" value="duzeltme"> Düzeltme istiyorum</label>
+  </div>
+  <textarea id="n5" name="n5" placeholder="Not (isteğe bağlı)"></textarea>
+  <div class="yanitlar" id="y5"></div>
+</section>
+<section class="icerik" id="v6" data-no="6" data-ad="GENÇLIK İKLIM ÖĞRENCI PANELI VE İKLIM SEMPOZYUMU">
+  <div class="bas"><span class="no">6</span><div><h2>GENÇLIK İKLIM ÖĞRENCI PANELI VE İKLIM SEMPOZYUMU</h2><p class="kunye">Takvim / kurumsal · yaklaşık 28 sn · yalnız Türkçe</p></div></div>
+  <div class="resim"><a href="paftalar/pafta-6.jpg" target="_blank" rel="noopener"><img src="paftalar/pafta-6.jpg" alt="6 · GENÇLIK İKLIM ÖĞRENCI PANELI VE İKLIM SEMPOZYUMU — altı an" loading="lazy"></a></div>
+  <p class="aciklama">Soldan sağa: açılış, çağrılar, görsel ve tarih, slogan ve mesaj, kapanış, logolar. Büyütmek için görsele tıklayın.<span class="kaydir"> Görseli yana kaydırabilirsiniz.</span></p>
+  <ol>
+    <li>Açılış: 5 İL • 5 ÖĞRENCİ • 5 ÖĞRETMEN</li>
+    <li>Çağrılar: SOR! DİNLE! TARTIŞ! • BİLİMİ KONUŞ!</li>
+    <li>Görsel: Panel ve sempozyum afişi veya program görseli; tarih bandı: 19 KASIM 2026 • ANTALYA</li>
+    <li>Ana slogan: İKLİM İÇİN SÖZ GENÇLERDE; ekran mesajı: Söz gençlerde, gündem iklim, hedef yaşanabilir bir gelecek! / Bilimle araştır, iklimi anla, geleceğe katkı sun!</li>
+    <li>Kapanış: FİKİR SENDE / EYLEM SENDE + “DOĞA • ÇEVRE • TOPLUM”</li>
+    <li>MEB ve COP31 logoları</li>
+  </ol>
+  <div class="ses"><b>Seslendirme metni</b>Beş il, beş öğrenci, beş öğretmen! Sor! Dinle! Tartış! Bilimi konuş! On dokuz Kasım iki bin yirmi altı, Antalya. İklim için söz gençlerde! Söz gençlerde, gündem iklim, hedef yaşanabilir bir gelecek! Bilimle araştır, iklimi anla, geleceğe katkı sun! Fikir sende, eylem sende!</div>
+  <div class="karar">
+    <label class="sec onay"><input type="radio" id="k6o" name="k6" value="onay"> Onaylıyorum</label>
+    <label class="sec duz"><input type="radio" id="k6d" name="k6" value="duzeltme"> Düzeltme istiyorum</label>
+  </div>
+  <textarea id="n6" name="n6" placeholder="Not (isteğe bağlı)"></textarea>
+  <div class="yanitlar" id="y6"></div>
+</section>
+<section class="icerik" id="v7" data-no="7" data-ad="HAREZMI EĞITIM UYGULAMALARI">
+  <div class="bas"><span class="no">7</span><div><h2>HAREZMI EĞITIM UYGULAMALARI</h2><p class="kunye">Takvim / kurumsal · yaklaşık 24 sn · yalnız Türkçe</p></div></div>
+  <div class="resim"><a href="paftalar/pafta-7.jpg" target="_blank" rel="noopener"><img src="paftalar/pafta-7.jpg" alt="7 · HAREZMI EĞITIM UYGULAMALARI — altı an" loading="lazy"></a></div>
+  <p class="aciklama">Soldan sağa: açılış, çağrılar, görsel ve tarih, slogan ve mesaj, kapanış, logolar. Büyütmek için görsele tıklayın.<span class="kaydir"> Görseli yana kaydırabilirsiniz.</span></p>
+  <ol>
+    <li>Açılış: 9 PROJE</li>
+    <li>Çağrılar: SORGULA! TASARLA! ÜRET! • DOĞAYA ÇÖZÜM ÜRET!</li>
+    <li>Görsel: Harezmi proje fotoğrafları veya etkinlik afişi; tarih bandı: 13–19 KASIM 2026 • ANTALYA</li>
+    <li>Ana slogan: BİLİMLE DOĞAYA ÇÖZÜM; ekran mesajı: Bilimle düşün, birlikte tasarla, iklim için üret!</li>
+    <li>Kapanış: MERAK SENDE / ÇÖZÜM SENDE + “DOĞA • ÇEVRE • TOPLUM”</li>
+    <li>MEB ve COP31 logoları</li>
+  </ol>
+  <div class="ses"><b>Seslendirme metni</b>Dokuz proje! Sorgula! Tasarla! Üret! Doğaya çözüm üret! On üç - on dokuz Kasım iki bin yirmi altı, Antalya. Bilimle doğaya çözüm! Bilimle düşün, birlikte tasarla, iklim için üret! Merak sende, çözüm sende!</div>
+  <div class="karar">
+    <label class="sec onay"><input type="radio" id="k7o" name="k7" value="onay"> Onaylıyorum</label>
+    <label class="sec duz"><input type="radio" id="k7d" name="k7" value="duzeltme"> Düzeltme istiyorum</label>
+  </div>
+  <textarea id="n7" name="n7" placeholder="Not (isteğe bağlı)"></textarea>
+  <div class="yanitlar" id="y7"></div>
+</section>
+<section class="icerik" id="v8" data-no="8" data-ad="SANAT VE FARKINDALIK ATÖLYELERI">
+  <div class="bas"><span class="no">8</span><div><h2>SANAT VE FARKINDALIK ATÖLYELERI</h2><p class="kunye">Kâğıt kolaj · yaklaşık 24 sn · yalnız Türkçe</p></div></div>
+  <div class="resim"><a href="paftalar/pafta-8.jpg" target="_blank" rel="noopener"><img src="paftalar/pafta-8.jpg" alt="8 · SANAT VE FARKINDALIK ATÖLYELERI — altı an" loading="lazy"></a></div>
+  <p class="aciklama">Soldan sağa: açılış, çağrılar, görsel ve tarih, slogan ve mesaj, kapanış, logolar. Büyütmek için görsele tıklayın.<span class="kaydir"> Görseli yana kaydırabilirsiniz.</span></p>
+  <ol>
+    <li>Açılış: KASTAMONU • ANTALYA</li>
+    <li>Çağrılar: İLHAM AL! • SANATLA ANLAT!</li>
+    <li>Görsel: Kastamonu ve Antalya atölye çalışmalarından fotoğraflar; tarih bandı: 14–19 KASIM 2026 • MAARİF OKULU İKLİM DENEYİM ATÖLYESİ</li>
+    <li>Ana slogan: SANATLA FARKINDALIK; ekran mesajı: Doğadan ilham al, sanatla anlat, farkındalık oluştur!</li>
+    <li>Kapanış: İLHAM SENDE / FARKINDALIK SENDE + “DOĞA • ÇEVRE • TOPLUM”</li>
+    <li>MEB ve COP31 logoları</li>
+  </ol>
+  <div class="ses"><b>Seslendirme metni</b>Kastamonu, Antalya! İlham al! Sanatla anlat! On dört - on dokuz Kasım iki bin yirmi altı, Maarif Okulu İklim Deneyim Atölyesi. Sanatla farkındalık! Doğadan ilham al, sanatla anlat, farkındalık oluştur! İlham sende, farkındalık sende!</div>
+  <div class="karar">
+    <label class="sec onay"><input type="radio" id="k8o" name="k8" value="onay"> Onaylıyorum</label>
+    <label class="sec duz"><input type="radio" id="k8d" name="k8" value="duzeltme"> Düzeltme istiyorum</label>
+  </div>
+  <textarea id="n8" name="n8" placeholder="Not (isteğe bağlı)"></textarea>
+  <div class="yanitlar" id="y8"></div>
+</section>
+<section class="icerik" id="v9" data-no="9" data-ad="DIJITAL ATIKTAN SANATA SERGI">
+  <div class="bas"><span class="no">9</span><div><h2>DIJITAL ATIKTAN SANATA SERGI</h2><p class="kunye">Kâğıt kolaj · yaklaşık 24 sn · yalnız Türkçe</p></div></div>
+  <div class="resim"><a href="paftalar/pafta-9.jpg" target="_blank" rel="noopener"><img src="paftalar/pafta-9.jpg" alt="9 · DIJITAL ATIKTAN SANATA SERGI — altı an" loading="lazy"></a></div>
+  <p class="aciklama">Soldan sağa: açılış, çağrılar, görsel ve tarih, slogan ve mesaj, kapanış, logolar. Büyütmek için görsele tıklayın.<span class="kaydir"> Görseli yana kaydırabilirsiniz.</span></p>
+  <ol>
+    <li>Açılış: KABLO • DEVRE • EKRAN</li>
+    <li>Çağrılar: SÖK! BİRLEŞTİR! DÖNÜŞTÜR!</li>
+    <li>Görsel: Kolaj eserlerinin fotoğrafları veya sergi afişi; tarih bandı: 14–19 KASIM 2026 • MAARİF OKULU SERGİ ALANI</li>
+    <li>Ana slogan: DİJİTAL ATIKTAN SANATA; ekran mesajı: Atıkları dönüştür, parçaları birleştir, sanatla iz bırak!</li>
+    <li>Kapanış: SANAT SENDE / DEĞİŞİM SENDE + “DOĞA • ÇEVRE • TOPLUM”</li>
+    <li>MEB ve COP31 logoları</li>
+  </ol>
+  <div class="ses"><b>Seslendirme metni</b>Kablo, devre, ekran! Sök! Birleştir! Dönüştür! On dört - on dokuz Kasım iki bin yirmi altı, Maarif Okulu sergi alanı. Dijital atıktan sanata! Atıkları dönüştür, parçaları birleştir, sanatla iz bırak! Sanat sende, değişim sende!</div>
+  <div class="karar">
+    <label class="sec onay"><input type="radio" id="k9o" name="k9" value="onay"> Onaylıyorum</label>
+    <label class="sec duz"><input type="radio" id="k9d" name="k9" value="duzeltme"> Düzeltme istiyorum</label>
+  </div>
+  <textarea id="n9" name="n9" placeholder="Not (isteğe bağlı)"></textarea>
+  <div class="yanitlar" id="y9"></div>
+</section>
+<section class="icerik" id="v10" data-no="10" data-ad="MAARIF ORKESTRA VE KOROSU KONSERI">
+  <div class="bas"><span class="no">10</span><div><h2>MAARIF ORKESTRA VE KOROSU KONSERI</h2><p class="kunye">Ritim / ses dalgası · yaklaşık 24 sn · yalnız Türkçe</p></div></div>
+  <div class="resim"><a href="paftalar/pafta-10.jpg" target="_blank" rel="noopener"><img src="paftalar/pafta-10.jpg" alt="10 · MAARIF ORKESTRA VE KOROSU KONSERI — altı an" loading="lazy"></a></div>
+  <p class="aciklama">Soldan sağa: açılış, çağrılar, görsel ve tarih, slogan ve mesaj, kapanış, logolar. Büyütmek için görsele tıklayın.<span class="kaydir"> Görseli yana kaydırabilirsiniz.</span></p>
+  <ol>
+    <li>Açılış: BİR ORKESTRA • BİR KORO • TEK SES</li>
+    <li>Çağrılar: DOĞAYI DİNLE! • UYUMU ÇAL!</li>
+    <li>Görsel: Orkestra ve koro fotoğrafı veya konser afişi; tarih bandı: 14 KASIM 2026 • AMFİ TİYATRO</li>
+    <li>Ana slogan: İKLİM İÇİN AYNI NOTADA; ekran mesajı: Doğanın sesine kulak ver, iklim için aynı ezgide buluş!</li>
+    <li>Kapanış: SES SENDE / UYUM SENDE + “DOĞA • ÇEVRE • TOPLUM”</li>
+    <li>MEB ve COP31 logoları</li>
+  </ol>
+  <div class="ses"><b>Seslendirme metni</b>Bir orkestra, bir koro, tek ses! Doğayı dinle! Uyumu çal! On dört Kasım iki bin yirmi altı, amfi tiyatro. İklim için aynı notada! Doğanın sesine kulak ver, iklim için aynı ezgide buluş! Ses sende, uyum sende!</div>
+  <div class="karar">
+    <label class="sec onay"><input type="radio" id="k10o" name="k10" value="onay"> Onaylıyorum</label>
+    <label class="sec duz"><input type="radio" id="k10d" name="k10" value="duzeltme"> Düzeltme istiyorum</label>
+  </div>
+  <textarea id="n10" name="n10" placeholder="Not (isteğe bağlı)"></textarea>
+  <div class="yanitlar" id="y10"></div>
+</section>
+<section class="icerik" id="v11" data-no="11" data-ad="ATIK PERKÜSYON KONSERI">
+  <div class="bas"><span class="no">11</span><div><h2>ATIK PERKÜSYON KONSERI</h2><p class="kunye">Ritim / ses dalgası · yaklaşık 24 sn · yalnız Türkçe</p></div></div>
+  <div class="resim"><a href="paftalar/pafta-11.jpg" target="_blank" rel="noopener"><img src="paftalar/pafta-11.jpg" alt="11 · ATIK PERKÜSYON KONSERI — altı an" loading="lazy"></a></div>
+  <p class="aciklama">Soldan sağa: açılış, çağrılar, görsel ve tarih, slogan ve mesaj, kapanış, logolar. Büyütmek için görsele tıklayın.<span class="kaydir"> Görseli yana kaydırabilirsiniz.</span></p>
+  <ol>
+    <li>Açılış: ŞİŞE • BİDON • KAPAK</li>
+    <li>Çağrılar: ATMA, ÇAL! • ATIK DEĞİL, RİTİM!</li>
+    <li>Görsel: Perküsyon grubunun fotoğrafı veya konser afişi — <b>klasörde bu etkinliğin afişi olmadığından genel COP31 OGM afişi kullanıldı</b>; tarih bandı: 14–19 KASIM 2026 • ANTALYA</li>
+    <li>Ana slogan: ATIKTAN RİTME; ekran mesajı: Atığa yeni bir ses ver, geleceğin ritmini yakala!</li>
+    <li>Kapanış: RİTİM SENDE / DÖNÜŞÜM SENDE + “DOĞA • ÇEVRE • TOPLUM”</li>
+    <li>MEB ve COP31 logoları</li>
+  </ol>
+  <div class="ses"><b>Seslendirme metni</b>Şişe, bidon, kapak! Atma, çal! Atık değil, ritim! On dört - on dokuz Kasım iki bin yirmi altı, Antalya. Atıktan ritme! Atığa yeni bir ses ver, geleceğin ritmini yakala! Ritim sende, dönüşüm sende!</div>
+  <div class="karar">
+    <label class="sec onay"><input type="radio" id="k11o" name="k11" value="onay"> Onaylıyorum</label>
+    <label class="sec duz"><input type="radio" id="k11d" name="k11" value="duzeltme"> Düzeltme istiyorum</label>
+  </div>
+  <textarea id="n11" name="n11" placeholder="Not (isteğe bağlı)"></textarea>
+  <div class="yanitlar" id="y11"></div>
+</section>
+<section class="icerik" id="v12" data-no="12" data-ad="ULUSAL GENÇLIK İKLIM ÇALIŞTAYLARI">
+  <div class="bas"><span class="no">12</span><div><h2>ULUSAL GENÇLIK İKLIM ÇALIŞTAYLARI</h2><p class="kunye">Harita / kâğıt kolaj · yaklaşık 24 sn · yalnız Türkçe</p></div></div>
+  <div class="resim"><a href="paftalar/pafta-12.jpg" target="_blank" rel="noopener"><img src="paftalar/pafta-12.jpg" alt="12 · ULUSAL GENÇLIK İKLIM ÇALIŞTAYLARI — altı an" loading="lazy"></a></div>
+  <p class="aciklama">Soldan sağa: açılış, çağrılar, görsel ve tarih, slogan ve mesaj, kapanış, logolar. Büyütmek için görsele tıklayın.<span class="kaydir"> Görseli yana kaydırabilirsiniz.</span></p>
+  <ol>
+    <li>Açılış: 30 İL • 1 ORTAK BİLDİRGE</li>
+    <li>Çağrılar: DÜŞÜN! TARTIŞ! ÖNER! • SESİNİ YÜKSELT!</li>
+    <li>Görsel: Çalıştay fotoğrafları ve bildirge kapak görselleri; tarih bandı: BİLDİRGELER: 17 KASIM 2026 • ANTALYA</li>
+    <li>Ana slogan: GENÇ SESLER, ORTAK GELECEK; ekran mesajı: 30 ilden genç fikirler, iklim için ortak çözümler!</li>
+    <li>Kapanış: SÖZ SENDE / GELECEK SENDE + “DOĞA • ÇEVRE • TOPLUM”</li>
+    <li>MEB ve COP31 logoları</li>
+  </ol>
+  <div class="ses"><b>Seslendirme metni</b>Otuz il, bir ortak bildirge! Düşün! Tartış! Öner! Sesini yükselt! Bildirgeler, on yedi Kasım iki bin yirmi altı, Antalya. Genç sesler, ortak gelecek! Otuz ilden genç fikirler, iklim için ortak çözümler! Söz sende, gelecek sende!</div>
+  <div class="karar">
+    <label class="sec onay"><input type="radio" id="k12o" name="k12" value="onay"> Onaylıyorum</label>
+    <label class="sec duz"><input type="radio" id="k12d" name="k12" value="duzeltme"> Düzeltme istiyorum</label>
+  </div>
+  <textarea id="n12" name="n12" placeholder="Not (isteğe bağlı)"></textarea>
+  <div class="yanitlar" id="y12"></div>
+</section>
+</main>
+<div class="gonder"><div class="ic">
+  <input id="ad" placeholder="Ad Soyad (gerekli)">
+  <button class="kaydet" id="kaydet" type="button">Kaydet</button>
+  <a class="wa" id="wa" href="https://wa.me/" target="_blank" rel="noopener">WhatsApp ile gönder</a>
+  <button class="kopya" id="kopya" type="button">Kopyala</button>
+  <div class="durum" id="durum"></div>
+</div></div>
+<script>
+window.ONAY_SCRIPT_URL = 'SCRIPT_URL_BURAYA';
+const ANAHTAR = 'meb-cop31-ogm-v2-onay-2710';
+const bolumler = [...document.querySelectorAll('.icerik')];
+const durum = (t) => { document.getElementById('durum').textContent = t; };
+function oku() { try { return JSON.parse(localStorage.getItem(ANAHTAR) || '{}'); } catch (e) { return {}; } }
+function yaz(v) { try { localStorage.setItem(ANAHTAR, JSON.stringify(v)); } catch (e) {} }
+function topla() {
+  const v = {ad: document.getElementById('ad').value.trim()};
+  bolumler.forEach(b => { const no = b.dataset.no; const s = b.querySelector('input:checked'); v['k' + no] = s ? s.value : ''; v['n' + no] = b.querySelector('textarea').value; });
+  return v;
+}
+function metin() {
+  const v = topla();
+  const satir = bolumler.map(b => {
+    const no = b.dataset.no, k = v['k' + no], n = v['n' + no].trim();
+    const d = k === 'onay' ? 'ONAY' : k === 'duzeltme' ? 'DÜZELTME' : 'işaretlenmedi';
+    return no + '. ' + b.dataset.ad + ': ' + d + (n ? ' — ' + n : '');
+  });
+  return "MEB COP31 OGM Reel'leri (yeni kurgu) — onay" + (v.ad ? ' (' + v.ad + ')' : '') + '\n' + satir.join('\n');
+}
+function guncelle() {
+  const v = topla(); yaz(v);
+  bolumler.forEach(b => { const k = v['k' + b.dataset.no]; b.classList.toggle('onay', k === 'onay'); b.classList.toggle('duzeltme', k === 'duzeltme'); });
+  document.getElementById('wa').href = 'https://wa.me/?text=' + encodeURIComponent(metin());
+}
+(function yukle() {
+  const v = oku();
+  if (v.ad) document.getElementById('ad').value = v.ad;
+  bolumler.forEach(b => { const no = b.dataset.no; if (v['k' + no]) { const r = b.querySelector('input[value="' + v['k' + no] + '"]'); if (r) r.checked = true; } if (v['n' + no]) b.querySelector('textarea').value = v['n' + no]; });
+  guncelle();
+})();
+document.addEventListener('input', guncelle);
+document.addEventListener('change', guncelle);
+document.getElementById('kopya').onclick = async () => {
+  const t = metin();
+  try { await navigator.clipboard.writeText(t); durum('Kopyalandı; mesaja yapıştırabilirsiniz.'); }
+  catch (e) { const a = document.createElement('textarea'); a.value = t; document.body.appendChild(a); a.select(); document.execCommand('copy'); a.remove(); durum('Kopyalandı; mesaja yapıştırabilirsiniz.'); }
+};
+
+/* ── Paylaşılan yanıtlar: Google Apps Script web uygulaması (apps-script/Code.gs) ── */
+const URL = window.ONAY_SCRIPT_URL;
+const hazir = () => URL && !URL.includes('BURAYA');
+const zamanYaz = (t) => { try { return new Date(t).toLocaleString('tr-TR', {day: '2-digit', month: '2-digit', hour: '2-digit', minute: '2-digit'}); } catch (e) { return t; } };
+function ciz(satirlar) {
+  const son = {}; // her video için her kişinin SON yanıtı
+  satirlar.forEach(s => { son[s.no + '|' + s.ad] = s; });
+  const liste = Object.values(son).sort((a, b) => new Date(b.zaman) - new Date(a.zaman));
+  let onay = 0, duz = 0;
+  bolumler.forEach(b => {
+    const no = b.dataset.no;
+    const y = liste.filter(s => String(s.no) === String(no));
+    const kutu = b.querySelector('.yanitlar');
+    if (!y.length) { kutu.innerHTML = ''; return; }
+    // Video durumu: herhangi birinin son yanıtı "düzeltme" ise düzeltme; yoksa onay.
+    if (y.some(s => s.karar === 'duzeltme')) duz++; else if (y.some(s => s.karar === 'onay')) onay++;
+    b.classList.toggle('duzeltme', y.some(s => s.karar === 'duzeltme'));
+    b.classList.toggle('onay', !y.some(s => s.karar === 'duzeltme') && y.some(s => s.karar === 'onay'));
+    kutu.innerHTML = '<h4>Gelen yanıtlar</h4>' + y.map(s => '<div class="yanit ' + s.karar + '"><span class="kim">' + esc(s.ad) + ' · ' + (s.karar === 'onay' ? 'Onaylıyorum' : s.karar === 'duzeltme' ? 'Düzeltme istiyorum' : '—') + '</span><span class="zaman">' + esc(zamanYaz(s.zaman)) + '</span>' + (s.not ? '<span class="ne">' + esc(s.not) + '</span>' : '') + '</div>').join('');
+  });
+  const bos = bolumler.length - onay - duz;
+  document.getElementById('ozet').innerHTML = '<span>Son durum (en son yanıtlara göre):</span><span class="rozet o">' + onay + ' onay</span><span class="rozet d">' + duz + ' düzeltme</span><span class="rozet b">' + bos + ' yanıtsız</span>';
+}
+function esc(s) { return String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;'); }
+async function yanitlariGetir() {
+  if (!hazir()) { document.getElementById('ozet').textContent = 'Yanıt kaydı henüz bağlı değil (SCRIPT_URL ayarlanmadı).'; return; }
+  try {
+    const r = await fetch(URL + '?t=' + Date.now(), {cache: 'no-store'});
+    const j = await r.json();
+    ciz(j.satirlar || []);
+  } catch (e) { document.getElementById('ozet').textContent = 'Yanıtlar yüklenemedi; sayfayı yenileyin.'; }
+}
+document.getElementById('kaydet').onclick = async () => {
+  const v = topla();
+  if (!v.ad) { durum('Lütfen önce adınızı yazın.'); document.getElementById('ad').focus(); return; }
+  const kayitlar = bolumler.map(b => ({no: b.dataset.no, ad: v.ad, karar: v['k' + b.dataset.no], not: (v['n' + b.dataset.no] || '').trim()})).filter(k => k.karar || k.not);
+  if (!kayitlar.length) { durum('Önce en az bir video için seçim yapın ya da not yazın.'); return; }
+  if (!hazir()) { durum('Yanıt kaydı bağlı değil; lütfen “Kopyala” ya da WhatsApp ile gönderin.'); return; }
+  const dugme = document.getElementById('kaydet'); dugme.disabled = true; durum('Kaydediliyor…');
+  try {
+    await fetch(URL, {method: 'POST', mode: 'no-cors', headers: {'Content-Type': 'text/plain;charset=utf-8'}, body: JSON.stringify({kayitlar})});
+    durum('Kaydedildi (' + kayitlar.length + ' video). Teşekkürler.');
+    setTimeout(yanitlariGetir, 1500);
+  } catch (e) { durum('Kaydedilemedi; lütfen “Kopyala” ya da WhatsApp ile gönderin.'); }
+  dugme.disabled = false;
+};
+yanitlariGetir();
+</script>
+</body>
+</html>
