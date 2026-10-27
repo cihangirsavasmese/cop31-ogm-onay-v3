@@ -55,6 +55,18 @@ textarea { width:100%; margin-top:10px; min-height:64px; border-radius:10px; bor
 button, .wa { border:0; border-radius:10px; padding:12px 16px; font:inherit; font-weight:700; cursor:pointer; text-decoration:none; display:inline-block; }
 .kaydet { background:var(--mavi); color:#fff; }
 .kaydet[disabled] { opacity:.6; cursor:wait; }
+[hidden] { display:none !important; }
+.kaydet.oldu { background:var(--yesil); }
+.perde { position:fixed; inset:0; background:rgba(20,30,40,.55); display:none; align-items:center; justify-content:center; padding:24px; z-index:50; }
+.perde.acik { display:flex; }
+.kutu { background:var(--kart); color:var(--metin); border-radius:18px; padding:28px 24px; max-width:420px; width:100%; text-align:center; box-shadow:0 20px 60px rgba(0,0,0,.35); }
+.kutu .simge { font-size:56px; line-height:1; margin-bottom:10px; }
+.kutu h3 { margin:0 0 8px; font-size:22px; }
+.kutu p { margin:0 0 18px; color:var(--ikincil); font-size:15px; line-height:1.4; }
+.kutu button { width:100%; }
+.kutu.bekle .simge { animation:don 1s linear infinite; display:inline-block; }
+.kutu.oldu h3 { color:var(--yesil); } .kutu.sorun h3 { color:var(--lale); }
+@keyframes don { to { transform:rotate(360deg); } }
 .wa { background:var(--wa); color:#fff; }
 .kopya { background:#E8ECEA; color:var(--metin); }
 @media (max-width: 640px) { .resim img { width:auto; height:420px; max-width:none; } .kaydir { display:inline; } .gonder { position:static; box-shadow:none; border-top:0; background:transparent; padding:0 16px 24px; } .gonder button, .gonder .wa { flex:1 1 45%; text-align:center; } }
@@ -73,7 +85,7 @@ button, .wa { border:0; border-radius:10px; padding:12px 16px; font:inherit; fon
     <tr><td>Görsel</td><td>Afiş ve fotoğraflar ilettiğiniz klasörden</td></tr>
     <tr><td>Metin</td><td>Ekran yazıları belgedeki gibi; seslendirme bu yazıların okunuşudur (metin her videonun altında)</td></tr>
     <tr><td>Süre</td><td>Yaklaşık 22–28 sn; kesin süre seslendirme kaydedilince belli olur</td></tr>
-    <tr><td>Nasıl?</td><td>Adınızı yazın, her video için “Onaylıyorum” ya da “Düzeltme istiyorum” seçip gerekirse not yazın; en altta <b>Kaydet</b>. Yanıtlarınız bu sayfada herkese görünür. İsterseniz ayrıca “WhatsApp ile gönder” ya da “Kopyala”.</td></tr>
+    <tr><td>Nasıl?</td><td>Adınızı yazın, her video için “Onaylıyorum” ya da “Düzeltme istiyorum” seçip gerekirse not yazın; en altta <b>Kaydet</b>. Kayıt tamamlanınca ekranda yeşil “Kaydedildi” kutusu çıkar ve yanıtınız her videonun altında “Gelen yanıtlar” başlığıyla görünür. İsterseniz ayrıca “WhatsApp ile gönder” ya da “Kopyala”.</td></tr>
   </table></div>
   <div class="ozet" id="ozet">Yanıtlar yükleniyor…</div>
 <section class="icerik" id="v1" data-no="1" data-ad="SOSYAL ETKINLIKLER POLITIKA BELGESI – DOĞA, ÇEVRE, TOPLUM">
@@ -324,6 +336,10 @@ button, .wa { border:0; border-radius:10px; padding:12px 16px; font:inherit; fon
   <button class="kopya" id="kopya" type="button">Kopyala</button>
   <div class="durum" id="durum"></div>
 </div></div>
+<div class="perde" id="perde" role="dialog" aria-live="assertive"><div class="kutu" id="kutu">
+  <div class="simge" id="kSimge">⏳</div><h3 id="kBaslik">Kaydediliyor…</h3><p id="kMetin">Lütfen bekleyin.</p>
+  <button class="kaydet" id="kTamam" type="button" hidden>Tamam</button>
+</div></div>
 <script>
 window.ONAY_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbwAd8YX40XTo0FaFmyFIZ2pTWjqFdKwUseMq8wbRt9Ww80FW6ZTpZqexnIm3wwkMRNC/exec';
 const ANAHTAR = 'meb-cop31-ogm-v2-onay-2710';
@@ -396,18 +412,49 @@ async function yanitlariGetir() {
     ciz(j.satirlar || []);
   } catch (e) { document.getElementById('ozet').textContent = 'Yanıtlar yüklenemedi; sayfayı yenileyin.'; }
 }
+const kutu = (tur, simge, baslik, metin, dugme) => {
+  const k = document.getElementById('kutu'); k.className = 'kutu ' + tur;
+  document.getElementById('kSimge').textContent = simge; document.getElementById('kBaslik').textContent = baslik; document.getElementById('kMetin').textContent = metin;
+  document.getElementById('kTamam').hidden = !dugme; document.getElementById('perde').classList.add('acik');
+};
+document.getElementById('kTamam').onclick = () => document.getElementById('perde').classList.remove('acik');
+async function satirSay() { try { const r = await fetch(URL + '?t=' + Date.now(), {cache: 'no-store'}); const j = await r.json(); return (j.satirlar || []).length; } catch (e) { return -1; } }
 document.getElementById('kaydet').onclick = async () => {
   const v = topla();
-  if (!v.ad) { durum('Lütfen önce adınızı yazın.'); document.getElementById('ad').focus(); return; }
+  if (!v.ad) { kutu('sorun', '✋', 'Adınızı yazın', 'Kaydetmeden önce alttaki kutuya adınızı yazmanız gerekiyor.', true); document.getElementById('ad').focus(); return; }
   const kayitlar = bolumler.map(b => ({no: b.dataset.no, ad: v.ad, karar: v['k' + b.dataset.no], not: (v['n' + b.dataset.no] || '').trim()})).filter(k => k.karar || k.not);
-  if (!kayitlar.length) { durum('Önce en az bir video için seçim yapın ya da not yazın.'); return; }
-  if (!hazir()) { durum('Yanıt kaydı bağlı değil; lütfen “Kopyala” ya da WhatsApp ile gönderin.'); return; }
+  if (!kayitlar.length) { kutu('sorun', '✋', 'Seçim yok', 'En az bir video için “Onaylıyorum” ya da “Düzeltme istiyorum” seçin ya da bir not yazın.', true); return; }
+  if (!hazir()) { kutu('sorun', '⚠️', 'Kayıt bağlı değil', 'Lütfen “Kopyala” ya da “WhatsApp ile gönder” ile iletin.', true); return; }
   const dugme = document.getElementById('kaydet'); dugme.disabled = true; durum('Kaydediliyor…');
+  kutu('bekle', '⏳', 'Kaydediliyor…', 'Yanıtlarınız gönderiliyor, lütfen bekleyin.', false);
+  const onceki = await satirSay();
+  let gonderildi = false;
   try {
     await fetch(URL, {method: 'POST', mode: 'no-cors', headers: {'Content-Type': 'text/plain;charset=utf-8'}, body: JSON.stringify({kayitlar})});
+    gonderildi = true;
+  } catch (e) {}
+  // Kaydın gerçekten tabloya düştüğünü sunucudan geri okuyarak doğrula (en çok ~24 sn).
+  let dogrulandi = false;
+  if (gonderildi) {
+    for (let i = 0; i < 12 && !dogrulandi; i++) {
+      await new Promise(r => setTimeout(r, 2000));
+      const simdi = await satirSay();
+      if (onceki >= 0 && simdi >= onceki + kayitlar.length) dogrulandi = true;
+    }
+  }
+  await yanitlariGetir();
+  if (dogrulandi) {
+    kutu('oldu', '✅', 'Kaydedildi', kayitlar.length + ' video için yanıtınız kaydedildi ve aşağıda “Gelen yanıtlar” altında görünüyor. Teşekkürler!', true);
     durum('Kaydedildi (' + kayitlar.length + ' video). Teşekkürler.');
-    setTimeout(yanitlariGetir, 4000); setTimeout(yanitlariGetir, 9000);
-  } catch (e) { durum('Kaydedilemedi; lütfen “Kopyala” ya da WhatsApp ile gönderin.'); }
+    dugme.classList.add('oldu'); dugme.textContent = 'Kaydedildi ✓'; setTimeout(() => { dugme.classList.remove('oldu'); dugme.textContent = 'Kaydet'; }, 8000);
+    try { navigator.vibrate && navigator.vibrate(80); } catch (e) {}
+  } else if (gonderildi) {
+    kutu('sorun', '⚠️', 'Gönderildi, doğrulanamadı', 'Yanıtınız gönderildi ama sayfada henüz görünmedi. Sayfayı yenileyip “Gelen yanıtlar” altına bakın; görünmüyorsa “Kopyala” ile WhatsApp’tan iletin.', true);
+    durum('Gönderildi; doğrulanamadı.');
+  } else {
+    kutu('sorun', '❌', 'Kaydedilemedi', 'Bağlantı kurulamadı. Lütfen “Kopyala” ya da “WhatsApp ile gönder” ile iletin.', true);
+    durum('Kaydedilemedi.');
+  }
   dugme.disabled = false;
 };
 yanitlariGetir();
