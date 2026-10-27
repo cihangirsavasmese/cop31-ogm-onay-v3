@@ -406,7 +406,7 @@ document.getElementById('kaydet').onclick = async () => {
   try {
     await fetch(URL, {method: 'POST', mode: 'no-cors', headers: {'Content-Type': 'text/plain;charset=utf-8'}, body: JSON.stringify({kayitlar})});
     durum('Kaydedildi (' + kayitlar.length + ' video). Teşekkürler.');
-    setTimeout(yanitlariGetir, 1500);
+    setTimeout(yanitlariGetir, 4000); setTimeout(yanitlariGetir, 9000);
   } catch (e) { durum('Kaydedilemedi; lütfen “Kopyala” ya da WhatsApp ile gönderin.'); }
   dugme.disabled = false;
 };
